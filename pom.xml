@@ -13,13 +13,13 @@
   <parent>
     <groupId>io.tesla.tycho</groupId>
     <artifactId>tycho-support</artifactId>
-    <version>0.0.12</version>
+    <version>0.0.13</version>
   </parent>  
   <!--
   <groupId>org.sonatype.m2e.antlr</groupId>  
   Use exising groupId for now until we figure out how to migrate people. If it matters.
   -->
-  <groupId>org.sonatype.m2e.extras</groupId>  
+  <groupId>org.sonatype.m2e.extras</groupId>
   <artifactId>org.sonatype.m2e.plexus.annotations.parent</artifactId>
   <version>0.15.0-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -28,16 +28,16 @@
   <properties>
     <repositoryPathId>m2eclipse-plexus</repositoryPathId>
     <p2MetadataName>M2E Plexus Annotations Connector</p2MetadataName>
-  </properties>  
-  
+  </properties>
+
   <repositories>
     <repository>
       <id>m2e-tests</id>
-      <url>https://repository.sonatype.org/content/sites/forge-sites/m2e/1.1.0/N/1.1.0.20120622-0806/</url>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2e/1.6.0/N/LATEST/</url>
       <layout>p2</layout>
-    </repository>      
-  </repositories>  
-    
+    </repository>
+  </repositories>
+
   <modules>
     <module>org.sonatype.m2e.plexus.annotations</module>
     <module>org.sonatype.m2e.plexus.annotations.feature</module>
