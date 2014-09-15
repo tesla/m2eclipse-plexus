@@ -11,9 +11,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>io.tesla.tycho</groupId>
+    <groupId>io.takari.tycho</groupId>
     <artifactId>tycho-support</artifactId>
-    <version>0.0.13</version>
+    <version>0.14.0</version>
   </parent>  
   <!--
   <groupId>org.sonatype.m2e.antlr</groupId>  
@@ -27,21 +27,13 @@
 
   <properties>
     <repositoryPathId>m2eclipse-plexus</repositoryPathId>
-    <p2MetadataName>M2E Plexus Annotations Connector</p2MetadataName>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>m2e-tests</id>
-      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2e/1.6.0/N/LATEST/</url>
-      <layout>p2</layout>
-    </repository>
-  </repositories>
 
   <modules>
     <module>org.sonatype.m2e.plexus.annotations</module>
     <module>org.sonatype.m2e.plexus.annotations.feature</module>
     <module>org.sonatype.m2e.plexus.annotations.tests</module>
+    <module>org.sonatype.m2e.plexus.annotations.repository</module>
   </modules>
 
 </project>
