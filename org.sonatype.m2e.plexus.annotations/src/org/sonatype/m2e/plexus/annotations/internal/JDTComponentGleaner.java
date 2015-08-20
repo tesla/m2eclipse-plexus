@@ -246,6 +246,11 @@ public class JDTComponentGleaner {
       return null;
     }
 
+    if(field.isBinary()) {
+      // workaround https://bugs.eclipse.org/bugs/show_bug.cgi?id=475481
+      return constant;
+    }
+
     ASTParser parser = ASTParser.newParser(AST.JLS3);
     parser.setSource(constant.toCharArray());
     parser.setKind( ASTParser.K_EXPRESSION );

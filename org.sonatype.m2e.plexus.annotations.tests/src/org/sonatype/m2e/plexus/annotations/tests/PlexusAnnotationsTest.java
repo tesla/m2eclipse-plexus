@@ -390,4 +390,21 @@ public class PlexusAnnotationsTest
         ComponentSetDescriptor componentSet = readComponentSet( testMetadata );
         assertEquals( 1, componentSet.getComponents().size() );
     }
+
+    public void test475481_binaryTypeHint()
+        throws Exception
+    {
+        IProject project = importProject( "projects/475481_binaryTypeHint/pom.xml", new ResolverConfiguration() );
+        waitForJobsToComplete();
+
+        workspace.build( IncrementalProjectBuilder.CLEAN_BUILD, monitor );
+        workspace.build( IncrementalProjectBuilder.FULL_BUILD, monitor );
+
+        assertNoErrors( project );
+
+        IFile metadata = project.getFile( "target/classes/META-INF/plexus/components.xml" );
+        ComponentDescriptor comp = getComponentDescriptor( readComponentSet( metadata ), "s.S" );
+
+        assertEquals( "stringValue", comp.getRoleHint() );
+    }
 }
